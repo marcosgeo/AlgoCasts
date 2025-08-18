@@ -8,12 +8,20 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
- }
+    // Convert the string to lowercase and remove spaces
+    const reversed = str.split('').reverse().join('');
+    // Compare the cleaned string with its reverse
+    return str === reversed
+}
 palindrome("abba");
 
 
 function palindrome2nd(str) {
- }
+    const isEqual = str.split('').every( (char, index) => {
+        return char === str[str.length - index - 1];
+    })
+    return isEqual;
+}
 
 
 module.exports = {palindrome, palindrome2nd};

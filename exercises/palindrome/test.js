@@ -1,7 +1,8 @@
-const palindrome = require('./index');
+const {palindrome, palindrome2nd} = require('./index');
 
 test('palindrome function is defined', () => {
   expect(typeof palindrome).toEqual('function');
+  expect(typeof palindrome2nd).toEqual('function');
 });
 
 test('"aba" is a palindrome', () => {
@@ -31,3 +32,20 @@ test('"Fish hsif" is not a palindrome', () => {
 test('"pennep" a palindrome', () => {
   expect(palindrome('pennep')).toBeTruthy();
 });
+
+test('palindrome2nd: "abba" is a palindrome', () => {
+  expect(palindrome2nd('abba')).toBeTruthy();
+});
+
+test('palindrome2nd: "abcdefg" is not a palindrome', () => {
+  expect(palindrome2nd('abcdefg')).toBeFalsy();
+} );
+
+test('palindrome2nd: "  abba" is a palindrome', () => {
+  expect(palindrome2nd('  abba')).toBeFalsy();
+});
+
+test('palindrome2nd: " abba " is a palindrome', () => {
+  expect(palindrome2nd(' abba ')).toBeTruthy();
+});
+
