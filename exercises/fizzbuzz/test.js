@@ -27,7 +27,7 @@ test('Calling fizzbuzz with 15 prints out the correct values', () => {
   expect(console.log.mock.calls[11][0]).toEqual('fizz');
   expect(console.log.mock.calls[12][0]).toEqual(13);
   expect(console.log.mock.calls[13][0]).toEqual(14);
-  expect(console.log.mock.calls[14][0]).toEqual('fizzbuzz');
+  expect(console.log.mock.calls[14][0]).toEqual('fizzBuzz');
 });
 
 beforeEach(() => {
