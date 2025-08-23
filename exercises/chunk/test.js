@@ -1,4 +1,4 @@
-const chunk = require('./index');
+const {chunk, chunk2} = require('./index');
 
 test('function chunk exists', () => {
   expect(typeof chunk).toEqual('function');
@@ -31,3 +31,10 @@ test('chunk divides an array of 13 elements with chunk size 5', () => {
 
   expect(chunked).toEqual([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13]]);
 });
+
+test('chunk2 divides an array of 13 elements with chunk size 5', () => {
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const chunked = chunk2(arr, 5);
+
+  expect(chunked).toEqual([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13]]);
+})
