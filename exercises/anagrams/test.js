@@ -1,7 +1,11 @@
-const anagrams = require('./index.js');
+const {anagrams, firstSolution } = require('./index.js');
 
 test('anagrams function exists', () => {
   expect(typeof anagrams).toEqual('function');
+});
+
+test('firstSolution function exists', () => {
+  expect(typeof(firstSolution)).toEqual('function');
 });
 
 test('"hello" is an anagram of "llohe"', () => {
@@ -25,3 +29,15 @@ test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"',
     anagrams('A tree, a life, a bench', 'A tree, a fence, a yard')
   ).toBeFalsy();
 });
+
+
+test('firstSolution: "A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"', () => {
+  expect(
+    firstSolution('A tree, a life, a bench', 'A tree, a fence, a yard')
+  ).toBeFalsy();
+});
+
+test('firstSolution: "Whoa! Hi!" is an anagram of "Hi! Whoa!"', () => {
+  expect(firstSolution('Whoa! Hi!', 'Hi! Whoa!')).toBeTruthy();
+});
+

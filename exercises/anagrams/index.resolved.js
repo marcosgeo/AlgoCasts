@@ -9,7 +9,36 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {  // my solution
+    const clearedA = stringA.replace(/[^\w]/g, "").toLowerCase();
+    const clearedB = stringB.replace(/[^\w]/g, "").toLowerCase();
+    
+    if (clearedA.length != clearedB.length){
+        return false;
+    }
+    const objA = {};
+    const objB = {};
+    for (let char of clearedA){
+        if (objA[char] > 0) {
+            objA[char] += 1;
+        } else {
+            objA[char] = 1;
+        }
+    }
 
+    for (let char of clearedB) {
+        if (objB[char] > 0) {
+            objB[char] += 1;
+        } else {
+            objB[char] = 1;
+        }
+    }
+
+    for (let key in objA) {
+        if (objA[key] != objB[key]) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function buildCharMap(str) {
