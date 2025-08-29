@@ -18,7 +18,21 @@
 //       '####'
 
 function steps(n) {  // my solution
-
+    let empty = 0;
+    let text = "";
+    for (let i = 1; i < n + 1; i++){
+        empty = n - i;
+        text = "";
+        for (let k = 0; k < i; k++){
+            text += "#";
+        }
+        debugger;
+        for (let j = 0; j < empty; j++) {
+            text += " ";
+        }
+        debugger;
+        console.log(text);
+    }
 }
 
 
