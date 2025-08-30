@@ -14,6 +14,11 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+}
 
-module.exports = pyramid;
+function pyramidRec(rows, size=0) {  // piramid with recursive solution
+
+}
+
+module.exports = {pyramid, pyramidRec};
