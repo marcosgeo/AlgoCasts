@@ -1,4 +1,4 @@
-const vowels = require('./index');
+const {vowelsRegex, vowels} = require('./index');
 
 test('Vowels is a function', () => {
   expect(typeof vowels).toEqual('function');
@@ -18,4 +18,8 @@ test('returns the number of vowels used', () => {
 
 test('returns the number of vowels used', () => {
   expect(vowels('bcdfghjkl')).toEqual(0);
+});
+
+test('vowelsRegex:  returns the number of vowels used', () => {
+  expect(vowelsRegex('abcdefghijklmnopqrstuvwxyz')).toEqual(5);
 });
