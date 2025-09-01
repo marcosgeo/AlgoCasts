@@ -14,7 +14,19 @@
 //     [12, 13, 14, 5],
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
+/*
+javascript accepts insert data in any place of the array
+const arr = [];
+arr[3] = 'hello';
+arr[8] = 'world';
+console.log(arr); // [ <3 empty items>, 'hello', <4 empty items>, 'world' ]
 
-function matrix(n) {}
+so, we can use this feature to create the internal arrays and fill them later
+
+*/
+
+function matrix(n) {
+
+}
 
 module.exports = matrix;
