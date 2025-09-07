@@ -9,10 +9,17 @@
 //   fib(4) === 3
 
 function fib(n) {
-
+    let current = 1;
+    let previous = 0
+    for (let i = 1; i < n; i++) {
+        let temp = current;
+        current = current + previous;
+        previous = temp;
+    }
+    return current;
 }
 
-function fibRecursive(n) {  // O(2^n) time complexity; this is too slow for large n; highly inefficient
+function fibRecursive(n) {
     if (n < 2){
         return n;
     }
