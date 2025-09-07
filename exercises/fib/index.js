@@ -8,16 +8,30 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {
+function memoize(fn) {
+    const cache = {};
 
+    return function(...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+        
+        console.log("Cache\n", cache);
+        return result;
+    }
 }
 
-function fibRecursive(n) {  // O(2^n) time complexity; this is too slow for large n; highly inefficient
+function slowFib(n) {  // O(2^n) time complexity; this is too slow for large n; highly inefficient
     if (n < 2){
         return n;
     }
 
-    return fibRecursive(n - 1) + fibRecursive(n - 2);
+    return fib(n - 1) + fib(n - 2);  // this calls the memoized version of fib
 }
+
+const fib = memoize(slowFib);  // O(n) time complexity with memoization; much more efficient
 
 module.exports = fib;
